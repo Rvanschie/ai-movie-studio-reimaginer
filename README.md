@@ -1,78 +1,72 @@
 # 🎬 AI Movie Studio Reimaginer
 
-A fully customizable AI-powered web app to visually reimagine movie scenes using GPT-4o, reference images, and a 90s-inspired prompt builder UI.
-
----
+Reimagine any movie shot-by-shot using GPT-4o + image reference inputs and actor replacements. Built with React and Vite, this app lets you construct, customize, and export high-fidelity prompts for use in AI image and video generators.
 
 ## 🚀 Features
 
-- 🔁 Actor replacement (e.g. Dwayne Johnson as Forrest Gump)
-- 🧠 GPT-4o & Vision API prompt generator
-- 🎛️ Scene & style control panel
-- 📸 Reference image analysis (future)
-- 🌈 Tailwind CSS interface
+- 🔄 **Cast Replacer**: Swap characters globally or per scene (e.g. Dwayne Johnson as Forrest Gump)
+- 🎞 **Scene & Shot Builder**: Drag & drop timeline editor with shot presets
+- 🎨 **Style Control Panel**: Adjust aspect ratio, film grain, 90s tone, lighting presets
+- 🖼 **Image Reference Upload**: Use real stills to auto-fill prompt details (vision model support)
+- 🧠 **Live Prompt Generator**: Get structured, batch-exportable prompts for each shot
+- 📁 **Asset Log**: Save and comment per-scene output
+- 📤 **Export Tools**: Copy to clipboard, export to Notion, markdown, or batch GPT
 
----
+## 🛠️ Tech Stack
 
-## 🧩 Tech Stack
+- **Frontend**: React + Vite + TailwindCSS
+- **State Management**: Zustand
+- **Export**: Markdown, CSV, Notion API (planned)
+- **AI Model**: GPT-4o Vision-ready (tested with sk-proj)
 
-- React 18
-- Vite
-- Tailwind CSS
-- Zustand (state)
-- GPT-4o compatible prompt output
-
----
-
-## ⚙️ Installation
+## 🔧 Getting Started
 
 ```bash
+# Clone repo
+git clone https://github.com/Rvanschie/ai-movie-studio-reimaginer.git
+cd ai-movie-studio-reimaginer
+
+# Install dependencies
 npm install
+
+# Run app
 npm run dev
 ```
 
-Then open [http://localhost:5173](http://localhost:5173)
+Then open: [http://localhost:5173](http://localhost:5173)
 
----
+## 🔑 Environment Setup
 
-## 📦 Project Structure
-
-```
-ai-movie-studio-reimaginer/
-├── index.html
-├── main.jsx
-├── App.jsx
-├── index.css
-├── package.json
-├── tailwind.config.js
-├── postcss.config.js
-```
-
----
-
-## 🔐 .env Support (optional)
-
-Create a `.env` file:
+Rename `.env.example` to `.env` and add your OpenAI key:
 
 ```
-OPENAI_API_KEY=your_openai_key_here
+OPENAI_API_KEY=sk-...
 ```
 
+## 🧩 Components
+
+- `App.jsx`: Main layout and router
+- `CastEditor.jsx`: Replace actors, save presets
+- `SceneLibrary.jsx`: Add, edit, and manage scenes
+- `ShotTimeline.jsx`: Visual timeline builder
+- `StylePanel.jsx`: Control visual tone
+- `PromptPreview.jsx`: Real-time prompt generation
+- `AssetLog.jsx`: Image reference + comments
+
+## 📦 Scripts
+
+```bash
+npm run dev       # Start development server
+npm run build     # Build for production
+```
+
+## 📚 Future Plans
+
+- Auto-vision parsing of uploaded images (GPT-4o)
+- Cloud asset storage (Firebase/Supabase)
+- Multi-user project collaboration
+- Real-time preview with AI image integration
+
 ---
 
-## 💡 Future Additions
-
-- ✅ Ref image AI analysis
-- ✅ Timeline prompt builder
-- ✅ Notion/Markdown export
-- ✅ Full trailer editor
-
----
-
-## 🧠 Agents.md
-
-For advanced task agents used in this app, see `AGENTS.md`.
-
----
-
-Made with ❤️ by Ramin & GPT-4o
+© 2025 — Built with ❤️ by Ramin (Monsieur Pixel)
